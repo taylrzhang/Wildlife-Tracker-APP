@@ -9,11 +9,40 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // sets the name of the DB that our collections are part of
-    dbName: "animals",
+    dbName: "animalTracking",
   })
   .then(() => console.log("Connected to Mongo DB."))
   .catch((err) => console.log(err));
 
 const Schema = mongoose.Schema;
 
-module.exports = {};
+const animalSchema = new Schema({
+  name: { type: String, required: true },
+  type: String,
+  description: String,
+
+  location: {
+    type: Schema.Types.ObjectId,
+    ref: "location",
+  },
+  date_create: Date,
+});
+
+const Animal = mongoose.model("Animal", animalSchema);
+
+const locationSchema = new Schema({
+  animal_name: {
+    type: Schema.Types.ObjectId,
+    ref: "animal",
+  },
+  lat: Number,
+  lng: Number,
+  date_create: Date,
+});
+
+const Location = mongoose.model("Location", locationSchema);
+
+module.exports = {
+  Animal,
+  Location,
+};

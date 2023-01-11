@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const bodyParser = require("body-parser");
 
 const apiRouter = require("./routes/api");
 
@@ -10,6 +11,7 @@ const apiRouter = require("./routes/api");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(bodyParser.json());
 /**
  * handle requests for static files
  */
