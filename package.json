@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node server/server.js",
     "build": "webpack",
-    "dev": "NODE_ENV=development  nodemon server/server.js & NODE_ENV=development webpack serve --open --hot",
+    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack serve --open --hot",
     "serve": "webpack serve"
   },
   "keywords": [],
@@ -14,6 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

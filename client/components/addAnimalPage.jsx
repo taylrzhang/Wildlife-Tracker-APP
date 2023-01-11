@@ -1,6 +1,6 @@
 import React from "react";
 
-const addAnimalPage = (props) => {
+const AddAnimalPage = (props) => {
   return (
     <div>
       <h1>Add Animal</h1>
@@ -11,4 +11,4 @@ const addAnimalPage = (props) => {
   );
 };
 
-export default addAnimalPage;
+export default AddAnimalPage;

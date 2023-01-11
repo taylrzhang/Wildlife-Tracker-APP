@@ -1,6 +1,6 @@
 import React from "react";
 
-const listPage = (props) => {
+const ListPage = (props) => {
   return (
     <div>
       <h1>Animal List</h1>
@@ -13,4 +13,4 @@ const listPage = (props) => {
   );
 };
 
-export default listPage;
+export default ListPage;

@@ -2,7 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/", starWarsController.getCharacters, (req, res) =>
-  res.status(200).send({ name: user })
+router.get("/", (req, res) => res.status(200).json({ name: "user" }));
+
+router.get("/list", (req, res) =>
+  res.status(200).json({ name: "user", animal: "marmot" })
 );
+
 module.exports = router;
