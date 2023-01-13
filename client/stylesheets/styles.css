@@ -1,3 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 * {
-  background-color: antiquewhite;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0 auto;
+}
+
+main {
+  /* display: flex;
+  flex-direction: column;
+   */
+  flex: 1 1 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+:root {
+  --header-height: 3.5rem;
+
+  --body-font: "Poppins", sans-serif;
+
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  --font-mediem: 500;
+  --font-semi-bold: 600;
+
+  --first-color: #108e82;
+  --first-color-second: #d8f48d;
+  --first-color-alt: #a6cb43;
+  --title-color: #0f0f0e;
+  --text-color: #0f0f0e;
+  --text-color-light: #bdbdbd;
+  --light-color: #f9f9f9;
+  --accent-color: #ee442b;
+  --body-color: #fff;
+  --container-color: #fff;
+}
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#map {
+  display: flex;
+  height: 80vh;
+}
+
+/*  footer nav  */
+.footer {
+  height: 5rem;
+  border-width: 0;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+.nav-icon-set {
+  position: relative;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 10vh;
+}
+
+.nav-icon-set li {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.nav-icon-label {
+  line-height: 5rem;
+  display: block;
+  font-size: 1rem;
+}
+
+/*  add button  */
+
+.addButton {
+  border-width: 0;
+  border-radius: 2em;
+  background-color: var(--first-color);
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  height: 2em;
+  box-shadow: 0 0em 0.2em rgb(16 142 130 / 50%);
+  padding: 1rem;
+}
+
+.addButton-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  margin: 1rem;
+}
+
+/*  animal list  */
+.animal-list {
+  list-style-type: none;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.animal-img {
+  /* display: block; */
+  width: 10vh;
+  height: 10vh;
+  border-radius: 0.5em;
+  object-fit: cover;
+  object-position: center;
+}
+
+.animal-list-body {
+  padding: 1em;
+}
+
+.animal-list-item {
+  margin: 1rem;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.animal-list-name {
+  font-weight: 400;
+  color: var(--text-color);
+  display: block;
+}
+
+.animal-list-type {
+  color: var(--text-color-light);
+  font-size: 0.8rem;
+}
+
+.add-animal-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+label {
+  color: var(--first-color);
+}
+
+.animal-profile-img {
+  width: 100px;
+  display: block;
+}
+
+#locations {
+  border: #bdbdbd 2px solid;
+  height: 240px;
+  width: 300px;
 }

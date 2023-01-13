@@ -20,7 +20,7 @@ const animalSchema = new Schema({
   name: { type: String, required: true },
   type: String,
   description: String,
-
+  img: String,
   location: {
     type: Schema.Types.ObjectId,
     ref: "location",
@@ -35,6 +35,7 @@ const locationSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "animal",
   },
+  name: String,
   lat: Number,
   lng: Number,
   date_create: Date,
