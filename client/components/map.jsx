@@ -7,17 +7,21 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import { formatRelative } from "date-fns";
-// type LatLngLiteral = google.maps.LatLngLiteral;
-// type DirectionsResult = google.maps.DirectionsResult;
-// type MapOptions = google.maps.MapOptions;
+import { Button, Modal, Navbar } from "react-bootstrap";
 
 const Map = (props) => {
   console.log(props.data);
 
   const center = useMemo(() => ({ lat: -25.3, lng: 131 }), []);
 
-  //   const [markers, setMarkers] = React.useState([]);
+  const [show, setShow] = useState(false);
+  const [pin, setPins] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
+
+  const handleShow = () => {
+    setShow(true);
+  };
+
   const markers = props.data;
 
   return (
@@ -28,15 +32,13 @@ const Map = (props) => {
       options={{ disableDefaultUI: true }}
       onChange={() => {}}
       onClick={(e) => {
-        // console.log(e);
-        // setMarkers((curr) => [
-        //   ...curr,
-        //   {
-        //     lat: e.latLng.lat(),
-        //     lng: e.latLng.lng(),
-        //     time: new Date(),
-        //   },
-        // ]);
+        console.log(e);
+        setPins({
+          lat: e.latLng.lat(),
+          lng: e.latLng.lng(),
+          time: new Date(),
+        });
+        handleShow();
       }}
     >
       {/* <Marker position={center} /> */}
@@ -64,6 +66,23 @@ const Map = (props) => {
           </div>
         </InfoWindow>
       ) : null}
+
+      <Marker position={{ lat: pin.lat, lng: pin.lng }}></Marker>
+      <Modal show={show} onHide={() => setShow(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>add animal</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <label>Name</label>
+          <input type="text" />
+          <label>Type</label>
+          <input type="text" />
+          <label>Description</label>
+          <input type="text" />
+
+          <Button>save</Button>
+        </Modal.Body>
+      </Modal>
     </GoogleMap>
   );
 };
