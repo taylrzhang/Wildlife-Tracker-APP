@@ -9,7 +9,7 @@ const ExplorePage = (props) => {
   // console.log(props.data);
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyCR9ofzXq6heqf1xQCmSM1MXfYhSCw6z9A",
+    googleMapsApiKey: "",
   });
 
   if (!isLoaded) return <div>Loading Map...</div>;

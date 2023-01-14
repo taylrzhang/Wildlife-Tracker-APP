@@ -1,1 +1,1 @@
-wildlife tracker APP
+Wildlife Tracker APP
